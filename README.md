@@ -8,9 +8,9 @@ Ver sitio <a href="#">🔗 aqui</a>
   <br>
 <p dir="auto">
     Las listas de tareas son una herramienta para ir apuntando cosas que quieres, debes o podrías hacer. Si lo miramos bien, estas listas son en verdad una expansión de nuestra memoria, pues al usarlas liberamos espacio y recursos en nuestra cabeza.
-    <br>
+    <br><br>
     Las listas de tareas son una de las herramientas más importantes de que puedes disponer para incrementar la productividad y estructurar mejor tu día a día. Esto explicaría por qué tantas personas serían incapaces de completar sus quehaceres diarios sin ayuda de una pequeña lista de ítems.
-    <br>
+    <br><br>
     En este repositorio aprenderás de hacer un proyecto de lista de tareas usando CRUD (Create, Read, Update, Delete) que básicamente es una manera de como administrar información dentro de un espacio de almacenamiento. (Bases de datos, localstorage, archivo de texto, etc.)
 </p>
 </details>
