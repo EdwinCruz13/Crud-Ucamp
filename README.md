@@ -20,7 +20,7 @@ Ver sitio <a href="#">🔗 aqui</a>
   <summary><h2>📁 Diseño del proyecto</h2></summary>
   <br>
 <p dir="auto"> 
-    <img src="#" />
+    <img src="https://github.com/EdwinCruz13/Ucamp-Crud/blob/main/structure/Task%20Manager.drawio.png?raw=true" />
 </p>
 </details>
 
@@ -46,7 +46,7 @@ Ver sitio <a href="#">🔗 aqui</a>
 <details open="">
   <summary><h2>💡 Resultado</h2></summary>
 <p dir="auto"> 
-  Ver mi LandingPage <a href="#">🔗 aqui</a>
+  Ver el proyecto <a href="#">🔗 aqui</a>
   <br>
   <ul>
     <li><a href="#">1 - Versión desktop.</a></li>
