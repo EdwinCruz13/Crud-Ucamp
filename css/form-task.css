@@ -1,0 +1,77 @@
+#in__process{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:1rem;
+}
+
+.task-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.task-container .title{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3EAA97;
+    color:#fff;
+    min-width: 350px;
+    width: 105px;
+    height: auto;
+
+}
+
+.task-container .title span{
+   font-size: 16px;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: normal;
+
+}
+
+.task-container .form-control{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap:12px;
+
+    padding:25px;
+    border: solid #3EAA97;
+}
+
+.task-container .form-control .input-control{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:12px;
+}
+
+.task-container .form-control .input-control label{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+
+.task-container .form-control .input-control input, 
+input[type='checkbox']{
+    display: block;
+    width: 100%;
+    padding: 0.37rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #495057;
+    border-radius: 0.3rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
+.task-container .form-control .input-control input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #495057;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+  }

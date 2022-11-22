@@ -1,29 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/form-task.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: #fff;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
 
     <title>Lista de tareas</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbar-logo">
-            <img class="navbar-logo-icon" src="./resources/icons8-todo-list-100.png" width="40" height="80" >
-            <h2 class="navbar-logo-text">Lista de Tareas</h2>
+      <div class="navbar-logo">
+        <img
+          class="navbar-logo-icon"
+          src="./resources/icons8-todo-list-100.png"
+          width="40"
+          height="80"
+        />
+        <h2 class="navbar-logo-text">Lista de Tareas</h2>
+      </div>
+
+      <section class="navbar-menu">
+        <div class="icon-user">
+          <div class="avatar"></div>
+          <h2>Edwin↓</h2>
         </div>
 
-        <section class="navbar-menu">
-            <div class="icon-user">
-                <div class="avatar"></div>
-                <h2>Edwin↓</h2>
+        <div class="icon-signout"></div>
+      </section>
+    </nav>
+
+    <main>
+      <aside>
+        <div class="card">
+            <div class="image">
+              <img
+                src="./resources/task-done.png"
+                alt=""
+              />
+              <span class="state">Terminada</span>
+            </div>
+  
+            <div class="details">
+              <h1>Task</h1>
+  
+              <p class="information">
+                Desarrollar mock para la agencia de viajes y publicidad
+              </p>
+  
+              <div class="btn-group">
+                  
+                  
+              </div>
+            </div>
+          </div>
+      </aside>
+
+      <section id="in__process">
+
+        <div class="task-container">
+            <div class="title">
+                <span>Crear Tareas</span>
             </div>
 
-            <div class="icon-signout"></div>
-           
-        </section>
-    </nav>
-</body>
+            <div class="form-control">
+                <div class="input-control">
+                    <label id="Titulo" for="Titulo">Titulo</label>
+                    <input type="text">
+                </div>
+                <div class="input-control">
+                    <label id="Descripcion" for="Descripcion">Descripción</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-control">
+                    <label id="Estado" for="Estado">Terminada</label>
+                    <input type="checkbox">
+                </div>
+
+                
+
+                
+            </div>
+        </div>
+
+
+
+
+        <div class="card">
+          <div class="image">
+            <img
+              src="./resources/task-inprocess.png"
+              alt=""
+            />
+            <span class="state">En proceso</span>
+          </div>
+
+          <div class="details">
+            <span class="badge">10</span>
+
+            <h1>Task</h1>
+            <p class="information">
+              Desarrollar mock para la agencia de viajes y publicidad
+            </p>
+
+            <div class="btn-group">
+                <button class="btn btn-primary">Terminar</button>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Anular</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        
+
+      </section>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,101 @@
+main{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 20% 80%;
+}
+
+main > aside, main > section {
+    position: relative;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: auto;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1000px){
+    main > aside{
+        display: none;
+    }
+
+    main > section{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+}
+
+
+.btn {
+	display: block;
+	cursor: pointer;
+	font-weight: 300;
+	text-align: center;
+	white-space: nowrap;
+
+	border: 1px solid transparent;
+	padding: 0.1rem 0.3rem;
+	font-size: 0.9rem;
+	line-height: 1.2;
+	border-radius: 0.25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: ce;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #3D5A80;
+  border-color: #42628b;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-warning:hover {
+  color: #212529;
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #EE6C4D;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #EE6C4D;
+}
