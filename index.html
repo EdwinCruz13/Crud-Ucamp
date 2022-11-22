@@ -46,28 +46,17 @@
 
     <main>
       <aside>
-        <div class="card">
-            <div class="image">
-              <img
-                src="./resources/task-done.png"
-                alt=""
-              />
-              <span class="state">Terminada</span>
-            </div>
-  
-            <div class="details">
-              <h1>Task</h1>
-  
-              <p class="information">
-                Desarrollar mock para la agencia de viajes y publicidad
-              </p>
-  
-              <div class="btn-group">
-                  
-                  
-              </div>
-            </div>
-          </div>
+        <h2>Tarea completadas</h2>
+        <ul>
+            <li>Task 1</li>
+            <li>Task 1</li>
+            <li>Task 1</li>
+            <li>Task 1</li>
+            <li>Task 1</li>
+            <li>Task 1</li>
+            <li>Task 1</li>
+            <li>Task 1</li>
+        </ul>
       </aside>
 
       <section id="in__process">
@@ -79,17 +68,21 @@
 
             <div class="form-control">
                 <div class="input-control">
-                    <label id="Titulo" for="Titulo">Titulo</label>
-                    <input type="text">
+                    <label for="Titulo">Titulo</label>
+                    <input id="Titulo" type="text">
                 </div>
                 <div class="input-control">
-                    <label id="Descripcion" for="Descripcion">Descripción</label>
-                    <input type="text">
+                    <label for="Descripcion">Descripción</label>
+                    <textarea id="Descripcion" cols="40" rows="1.2"></textarea>
+                </div>
+
+                <div class="input-control input-check">
+                    <label for="Estado">Terminada</label>
+                    <input id="check-Estado" type="checkbox">
                 </div>
 
                 <div class="input-control">
-                    <label id="Estado" for="Estado">Terminada</label>
-                    <input type="checkbox">
+                    <button class="btn btn-success">Guardar</button>
                 </div>
 
                 

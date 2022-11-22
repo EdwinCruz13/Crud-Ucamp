@@ -11,7 +11,7 @@ main > aside, main > section {
     height: auto;
 }
 
-@media only screen and (min-width: 480px) and (max-width: 1000px){
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
     main > aside{
         display: none;
     }
@@ -26,6 +26,23 @@ main > aside, main > section {
         justify-content: space-evenly;
 
     }
+}
+
+@media only screen and (max-width: 767px) {
+  main > aside{
+      display: none;
+  }
+
+  main > section{
+      grid-column-start: 1;
+      grid-column-end: 3;
+  }
+
+  .btn-group {
+      display: flex;
+      justify-content: space-evenly;
+
+  }
 }
 
 

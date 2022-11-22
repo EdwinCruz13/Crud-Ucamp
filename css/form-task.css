@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap:1rem;
+    gap:2rem;
 }
 
 .task-container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
     
 }
 
@@ -34,10 +35,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap:12px;
+    justify-content:flex-start;
+    gap:8px;
 
     padding:25px;
     border: solid #3EAA97;
+
 }
 
 .task-container .form-control .input-control{
@@ -53,10 +56,11 @@
 }
 
 .task-container .form-control .input-control input, 
-input[type='checkbox']{
-    display: block;
+.task-container .form-control .input-control textarea, 
+.task-container .form-control .input-control .btn{
+    display: inline-block;
     width: 100%;
-    padding: 0.37rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     font-size: 1rem;
     line-height: 1;
     color: #495057;
@@ -65,13 +69,56 @@ input[type='checkbox']{
     border-radius: 0.3rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.task-container .form-control .input-control .btn-success{
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    width: 7rem;
+    margin-top: 1.8rem;
+
+} 
 
 
 
-.task-container .form-control .input-control input:focus {
+.task-container .form-control .input-control input:focus,
+.task-container .form-control .input-control textarea:focus  {
     color: #495057;
     background-color: #fff;
     border-color: #495057;
     outline: 0;
     box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
-  }
+ }
+
+ .task-container .form-control .input-control #check-Estado{
+    position:relative;
+    display: block;
+    width: auto;
+    height: 25px;
+ }
+
+ @media only screen and (max-width: 767px) {
+    .task-container .form-control{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        gap:12px;
+    
+        padding:25px;
+        width: 100%;
+    }
+    .input-check{
+       display: flex;
+       flex-direction: row;
+       justify-content:left;
+       align-items: left;
+       
+
+    }
+
+    .task-container .form-control .input-control #check-Estado{
+        width: 25px;
+        height: 25px;
+     }
+ }
