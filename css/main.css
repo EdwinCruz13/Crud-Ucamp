@@ -7,7 +7,6 @@ main{
 main > aside, main > section {
     display: block;
     padding: 1rem;
-    
     height: auto;
 }
 
@@ -26,6 +25,8 @@ main > aside, main > section {
         justify-content: space-evenly;
 
     }
+
+   
 }
 
 @media only screen and (max-width: 767px) {
@@ -43,14 +44,18 @@ main > aside, main > section {
       justify-content: space-evenly;
 
   }
+
+  
 }
 
 #in-process {
   display: flex;
-  align-items: center;
+  align-items:center;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+
 
 
 
