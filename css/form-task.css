@@ -1,9 +1,4 @@
-#in__process{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap:2rem;
-}
+
 
 .task-container{
     display: flex;
@@ -89,7 +84,7 @@
     box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
  }
 
- .task-container .form-control .input-control #check-Estado{
+ .task-container .form-control .input-control #check-State{
     position:relative;
     display: block;
     width: auto;
@@ -117,7 +112,7 @@
 
     }
 
-    .task-container .form-control .input-control #check-Estado{
+    .task-container .form-control .input-control #check-State{
         width: 25px;
         height: 25px;
      }

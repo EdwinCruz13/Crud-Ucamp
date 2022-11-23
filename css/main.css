@@ -1,13 +1,13 @@
 main{
     display: grid;
     width: 100%;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 2fr 5fr;
 }
 
 main > aside, main > section {
-    position: relative;
+    display: block;
     padding: 1rem;
-    box-sizing: border-box;
+    
     height: auto;
 }
 
@@ -45,6 +45,15 @@ main > aside, main > section {
   }
 }
 
+#in-process {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+
 
 .btn {
 	display: block;
@@ -64,7 +73,7 @@ main > aside, main > section {
 .btn-group {
   display: flex;
   justify-content: space-around;
-  align-items: ce;
+  align-items: flex-start;
 }
 
 .btn-primary {

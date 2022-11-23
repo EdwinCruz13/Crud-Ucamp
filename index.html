@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/form-task.css" />
+    <link rel="stylesheet" href="css/list.css" />
 
     <style>
       * {
@@ -46,17 +47,38 @@
 
     <main>
       <aside>
-        <h2>Tarea completadas</h2>
-        <ul>
-            <li>Task 1</li>
-            <li>Task 1</li>
-            <li>Task 1</li>
-            <li>Task 1</li>
-            <li>Task 1</li>
-            <li>Task 1</li>
-            <li>Task 1</li>
-            <li>Task 1</li>
-        </ul>
+        <div class="list-task">
+            <h2>Tarea completadas</h2>
+            <ul>
+                <li>Task 1</li>
+               
+            </ul>
+        </div>
+        <div class="list-task">
+            <h2>Tarea eliminadas</h2>
+            <ul>
+                <li>
+                    <span>Task 1</span>
+                    <div class="btn-group">
+                        <button class="btn btn-warning">Editar</button>
+                    </div>
+                </li>
+
+                <li>
+                    <span>Task 2</span>
+                    <div class="btn-group">
+                        <button class="btn btn-warning">Editar</button>
+                    </div>
+                </li>
+
+                <li>
+                    <span>Task 3</span>
+                    <div class="btn-group">
+                        <button class="btn btn-warning">Editar</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
       </aside>
 
       <section id="in__process">
@@ -68,26 +90,23 @@
 
             <div class="form-control">
                 <div class="input-control">
-                    <label for="Titulo">Titulo</label>
-                    <input id="Titulo" type="text">
+                    <label for="Title">Titulo</label>
+                    <input id="Title" type="text">
                 </div>
                 <div class="input-control">
-                    <label for="Descripcion">Descripción</label>
-                    <textarea id="Descripcion" cols="40" rows="1.2"></textarea>
+                    <label for="Description">Descripción</label>
+                    <textarea id="Description" cols="40" rows="1.2"></textarea>
                 </div>
 
                 <div class="input-control input-check">
-                    <label for="Estado">Terminada</label>
-                    <input id="check-Estado" type="checkbox">
+                    <label for="State">Terminada</label>
+                    <input id="check-State" type="checkbox">
                 </div>
 
                 <div class="input-control">
-                    <button class="btn btn-success">Guardar</button>
+                    <button class="btn btn-success" onclick="SaveTask()">Guardar</button>
                 </div>
-
-                
-
-                
+  
             </div>
         </div>
 
@@ -125,5 +144,8 @@
 
       </section>
     </main>
+
+
+    <script src="./js/worker.js"></script>
   </body>
 </html>
