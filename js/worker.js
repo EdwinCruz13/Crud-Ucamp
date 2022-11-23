@@ -1,5 +1,6 @@
-var Tasks = [];
+//var Tasks = [];
 //localStorage.setItem( "Tasks", JSON.stringify(Tasks) );
+//localStorage.clear()
 
 
 LoadData();
@@ -12,13 +13,20 @@ section.innerHTML += CreateCard(3, "task.Title", "task.Description");*/
 //Load the tasks saved in the localstorage "Tasks"
 function LoadData()
 {
-    var section;
-    _itemTasks = JSON.parse( localStorage.getItem( "Tasks" ) ); 
-    //fetch the array
-    _itemTasks.map((task) => {
-       section = document.getElementById("section-card");
-       section.innerHTML += CreateCard(1, task.Title, task.Description);
-    });
+    var section = document.getElementById("section-card");
+    section.innerHTML = '';
+   
+    
+    if (localStorage.getItem("Tasks") != null) {
+        _itemTasks = JSON.parse( localStorage.getItem( "Tasks" ) ); 
+            //fetch the array
+            _itemTasks.map((task) => {
+            section.innerHTML += CreateCard(task.id, task.Title, task.Description);
+        });
+    }
+
+
+   
 
 }
 
@@ -29,14 +37,15 @@ function SaveTask()
     var title = document.getElementById("Title");
     var description = document.getElementById("Description");
     var state = document.getElementById("check-State");
+    var filters = [];
+    var Tasks = [];
 
-    //verify localstarage
-    Tasks = JSON.parse( localStorage.getItem( "Tasks" ) );
-    console.log(Tasks);
-
-    var filters = Tasks.filter(item => item.Title == title.value);
-
-    
+    //vverify if localstorage has elements
+    if (localStorage.getItem("Tasks") != null) {
+        //verify localstarage
+        var Tasks = JSON.parse( localStorage.getItem( "Tasks" ) );
+        filters = Tasks.filter(item => item.Title == title.value);
+    }
 
     //if there is not match, push a new element into localstarage
     if(filters.length == 0){
@@ -57,6 +66,7 @@ function SaveTask()
 
         //add items into localstorage
         localStorage.setItem( "Tasks", JSON.stringify(Tasks) );
+        Tasks = [];
         
 
     }
@@ -65,7 +75,7 @@ function SaveTask()
 
 
     //load the data
-    Tasks = [];
+    
     LoadData();
         
 }
