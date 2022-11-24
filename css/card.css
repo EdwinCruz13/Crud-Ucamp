@@ -20,6 +20,11 @@
   text-align: left;
   overflow: hidden;
   padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:space-around;
 }
 
 .card .details h1 {

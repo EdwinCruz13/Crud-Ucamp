@@ -99,8 +99,9 @@ main > aside, main > section {
 
 .btn-group {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content:space-evenly;
+  align-items:flex-end;
+
 }
 
 .btn-primary {

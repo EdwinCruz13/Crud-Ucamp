@@ -19,9 +19,21 @@ function LoadData()
     
     if (localStorage.getItem("Tasks") != null) {
         _itemTasks = JSON.parse( localStorage.getItem( "Tasks" ) ); 
+            var _state = "";
+ 
             //fetch the array
             _itemTasks.map((task) => {
-            section.innerHTML += CreateCard(task.id, task.Title, task.Description);
+                if(task.State == 1)
+                _state = "En proceso";
+
+                if(task.State == 2)
+                    _state = "Terminada";
+
+                if(task.State == 0)
+                    _state = "Anulada";
+
+
+            section.innerHTML += CreateCard(task.id, task.Title, task.Description, _state);
         });
     }
 
@@ -60,7 +72,7 @@ function SaveTask()
                      Title: title.value, 
                      Description: description.value, 
                      DueTo: "", 
-                     State: state.checked 
+                     State: Number(state.checked )
                     }
         Tasks.push(Task);  
 
@@ -80,7 +92,7 @@ function SaveTask()
         
 }
 
-function CreateCard(_id, _title, _descripcion)
+function CreateCard(_id, _title, _descripcion, _state)
 {
     var strcad = "";
     strcad = "<div data-id='" + _id + "' class='card'>"
@@ -89,7 +101,7 @@ function CreateCard(_id, _title, _descripcion)
     strcad += "    src='./resources/task-inprocess.png'"
     strcad += "    alt=''"
     strcad += "  />"
-    strcad += "  <span class='state'>En proceso</span>"
+    strcad += "  <span class='state'>" + _state + "</span>"
     strcad += "</div>"
 
     strcad += "<div class='details'>"
