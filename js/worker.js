@@ -23,13 +23,13 @@ function LoadData()
  
             //fetch the array
             _itemTasks.map((task) => {
-                if(task.State == 1)
+                if(task.State == 0)
                 _state = "En proceso";
 
-                if(task.State == 2)
+                if(task.State == 1)
                     _state = "Terminada";
 
-                if(task.State == 0)
+                if(task.State == -1)
                     _state = "Anulada";
 
 
