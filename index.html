@@ -47,15 +47,16 @@
 
     <main>
       <aside>
-        <div class="list-task">
+        <div id="Done-Task" class="list-task">
+           <!-- 
             <h2>Tarea completadas</h2>
             <ul>
                 <li>Task 1</li>
-               
             </ul>
+            -->
         </div>
-        <div class="list-task">
-            <h2>Tarea eliminadas</h2>
+        <div id="Cancelled-Task"  class="list-task">
+           <!-- <h2>Tarea eliminadas</h2>
             <ul>
                 <li>
                     <span>Task 1</span>
@@ -63,21 +64,8 @@
                         <button class="btn btn-warning">Editar</button>
                     </div>
                 </li>
-
-                <li>
-                    <span>Task 2</span>
-                    <div class="btn-group">
-                        <button class="btn btn-warning">Editar</button>
-                    </div>
-                </li>
-
-                <li>
-                    <span>Task 3</span>
-                    <div class="btn-group">
-                        <button class="btn btn-warning">Editar</button>
-                    </div>
-                </li>
             </ul>
+             -->
         </div>
       </aside>
 
@@ -98,10 +86,10 @@
                     <textarea id="Description" cols="40" rows="1.2"></textarea>
                 </div>
 
-                <div class="input-control input-check">
+                <!--<div class="input-control input-check">
                     <label for="State">Terminada</label>
                     <input id="check-State" type="checkbox">
-                </div>
+                </div> -->
 
                 <div class="input-control">
                     <button class="btn btn-success" onclick="SaveTask()">Guardar</button>
@@ -114,31 +102,6 @@
           <h1>Tareas pendientes</h1>
         
         <div id="section-card">
-          
-          <div data-id="1" class="card">
-            <div class="image">
-              <img
-                src="./resources/task-inprocess.png"
-                alt=""
-              />
-              <span class="state">En proceso</span>
-            </div>
-  
-            <div class="details">
-              <span class="badge">10</span>
-  
-              <h1>Task</h1>
-              <p class="information">
-                Desarrollar mock para la agencia de viajes y publicidad
-              </p>
-  
-              <div class="btn-group">
-                  <button class="btn btn-primary" onclick="">Terminar</button>
-                  <button class="btn btn-warning">Editar</button>
-                  <button class="btn btn-danger">Anular</button>
-              </div>
-            </div>
-          </div>
 
           <!--<div data-id="1" class="card">
             <div class="image">

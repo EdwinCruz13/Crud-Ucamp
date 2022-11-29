@@ -2,27 +2,35 @@
 //localStorage.setItem( "Tasks", JSON.stringify(Tasks) );
 //localStorage.clear()
 
-
+let isEdit = false;
+let valueID = 0;
 LoadData();
 
-/*var section = document.getElementById("section-card");
-section.innerHTML = CreateCard(1, "task.Title", "task.Description");
-section.innerHTML += CreateCard(2, "task.Title", "task.Description");
-section.innerHTML += CreateCard(3, "task.Title", "task.Description");*/
 
 //Load the tasks saved in the localstorage "Tasks"
 function LoadData()
 {
-    var section = document.getElementById("section-card");
-    section.innerHTML = '';
+    //get Id from section card
+    var Card = document.getElementById("section-card");
+    Card.innerHTML = '';
+
+    //get Id from done task from div
+    var CompletedDiv = document.getElementById("Done-Task");
+    CompletedDiv.innerHTML = '<h2>Tareas completadas</h2>';
+
+    //get Id from Cancelled task from div
+    var CancelledDiv = document.getElementById("Cancelled-Task");
+    CancelledDiv.innerHTML = '<h2>Tareas eliminadas</h2>';
    
-    
     if (localStorage.getItem("Tasks") != null) {
-        _itemTasks = JSON.parse( localStorage.getItem( "Tasks" ) ); 
+
+        //get all the task
+        _itemTasks = JSON.parse( localStorage.getItem( "Tasks" )); 
             var _state = "";
- 
-            //fetch the array
-            _itemTasks.map((task) => {
+        
+
+            //fetch only the pending task, use filter + map
+            _itemTasks.filter((item) => item.State == 0).map((task) => {
                 if(task.State == 0)
                 _state = "En proceso";
 
@@ -32,14 +40,21 @@ function LoadData()
                 if(task.State == -1)
                     _state = "Anulada";
 
+                Card.innerHTML += CreateCard(task.id, task.Title, task.Description, _state);
 
-            section.innerHTML += CreateCard(task.id, task.Title, task.Description, _state);
-        });
+            });
+
+            //fetch only the completed task, use filter + map
+            _itemTasks.filter((item) => item.State == 1).map((task) => {
+                CompletedDiv.innerHTML += CreateDoneList(task.id, task.Title, task.Description, _state);
+            });
+
+            //fetch only the canceled task, use filter + map
+            _itemTasks.filter((item) => item.State == -1).map((task) => {
+                CancelledDiv.innerHTML += CreateCancelledList(task.id, task.Title, task.Description, _state);
+            });
+
     }
-
-
-   
-
 }
 
 //Save new task
@@ -48,7 +63,6 @@ function SaveTask()
     //get inputs form
     var title = document.getElementById("Title");
     var description = document.getElementById("Description");
-    var state = document.getElementById("check-State");
     var filters = [];
     var Tasks = [];
 
@@ -59,43 +73,131 @@ function SaveTask()
         filters = Tasks.filter(item => item.Title == title.value);
     }
 
+
     //if there is not match, push a new element into localstarage
     if(filters.length == 0){
-        localStorage.clear();
+        
+        //check out if we are editing or adding new element
+        if (isEdit == false){ //adding new element
 
-        //get the max Id
-        var IdMax = Math.max(...Tasks.map(itemMax => itemMax.id))
-        IdMax = (Tasks.length == 0) ? 0 : IdMax;
+            //clear localstorage
+            localStorage.clear();
+            //get the max Id
+            var IdMax = Math.max(...Tasks.map(itemMax => itemMax.id))
+            IdMax = (Tasks.length == 0) ? 0 : IdMax;
 
 
-        var Task = { id: IdMax + 1, 
-                     Title: title.value, 
-                     Description: description.value, 
-                     DueTo: "", 
-                     State: Number(state.checked )
-                    }
-        Tasks.push(Task);  
+            var Task = { id: IdMax + 1, Title: title.value, Description: description.value, DueTo: "", State: 0}
+            Tasks.push(Task);  
+
+        }
+
+        else{
+            //replacing element because the state changed
+            var Tasks = Tasks.map((elements) => {
+                if(elements.id === parseInt(valueID)){
+                    elements.Title = title.value;
+                    elements.Description = description.value;
+                }
+                return elements
+            });
+        }
 
         //add items into localstorage
         localStorage.setItem( "Tasks", JSON.stringify(Tasks) );
-        Tasks = [];
+        
         
 
     }
     else    
         alert("There is a task using the same Title");
 
-
-    //load the data
     
+
+    
+    //load the data
+    title.value = "";
+    description.value = "";
+    isEdit = false;
+    Tasks = [];
     LoadData();
         
 }
 
+function CompleteTask(e)
+{
+    var id = e.getAttribute('data-id'); 
+    //get all the tasks
+    var tasks = JSON.parse(localStorage.getItem("Tasks"));
+
+
+    //replacing element because the state changed
+    var newTasks = tasks.map((elements) => {
+        if(elements.id === parseInt(id))
+            elements.State = 1
+
+        return elements
+    });
+
+    console.log(newTasks);
+
+    //save changes
+    localStorage.setItem( "Tasks", JSON.stringify(newTasks) );
+    LoadData();
+}
+
+function CancelTask(e)
+{
+    var id = e.getAttribute('data-id'); 
+    //get all the tasks
+    var tasks = JSON.parse(localStorage.getItem("Tasks"));
+
+    //replacing element because the state changed
+    var newTasks = tasks.map((elements) => {
+        if(elements.id === parseInt(id))
+            elements.State = -1
+
+        return elements
+    });
+
+    console.log(newTasks);
+
+    //save changes
+    localStorage.setItem( "Tasks", JSON.stringify(newTasks) );
+    LoadData();
+}
+
+function EditTask(e){
+    var id = e.getAttribute('data-id'); 
+    //get all the tasks
+    var tasks = JSON.parse(localStorage.getItem("Tasks"));
+
+    //replacing element because the state changed
+    var task = tasks.filter((element) => element.id == parseInt(id))
+
+    //get elements from the form
+    var title = document.getElementById("Title");
+    title.value = task[0].Title
+
+    var description = document.getElementById("Description");
+    description.value = task[0].Description
+
+    isEdit = true;
+    valueID = parseInt(id);
+    
+
+    //save changes
+    /*localStorage.setItem( "Tasks", JSON.stringify(newTasks) );
+    LoadData();*/
+}
+
+
+
+
 function CreateCard(_id, _title, _descripcion, _state)
 {
     var strcad = "";
-    strcad = "<div data-id='" + _id + "' class='card'>"
+    strcad = "<div class='card'>"
     strcad += "<div class='image'>"
     strcad += "<img"
     strcad += "    src='./resources/task-inprocess.png'"
@@ -113,12 +215,37 @@ function CreateCard(_id, _title, _descripcion, _state)
     strcad += "  </p>"
 
     strcad += "  <div class='btn-group'>"
-    strcad += "      <button class='btn btn-primary'>Terminar</button>"
-    strcad += "      <button class='btn btn-warning'>Editar</button>"
-    strcad += "      <button class='btn btn-danger'>Anular</button>"
+    strcad += "      <button class='btn btn-primary' data-id='" + _id + "' onclick='CompleteTask(this)'>Terminar</button>"
+    strcad += "      <button class='btn btn-warning' data-id='" + _id + "' onclick='EditTask(this)'>Editar</button>"
+    strcad += "      <button class='btn btn-danger'  data-id='" + _id + "' onclick='CancelTask(this)'>Anular</button>"
     strcad += "  </div>"
     strcad += "</div>"
     strcad += "</div>" 
 
+    return strcad;
+}
+
+function CreateDoneList(_id, _title, _descripcion, _state)
+{
+    var strcad = "";
+    strcad += "<ul>";
+    strcad += "<li data-id='" + _id + "'>" + _title + "</li>";
+    strcad += "</ul>";
+    return strcad;
+}
+
+function CreateCancelledList(_id, _title, _descripcion, _state)
+{
+    var strcad = "";
+    strcad += "<ul>";
+
+    strcad += "<li>";
+    strcad += "<span>" + _title + "</span>";
+    strcad += "<div class='btn-group'>";
+    strcad += "<button class='btn btn-warning' data-id='" + _id + "'>Editar</button>";
+    strcad += "</div>";
+    strcad += "</li>";
+    strcad += "</ul>";
+    
     return strcad;
 }
