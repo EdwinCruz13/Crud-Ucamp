@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/card.css" />
-    <link rel="stylesheet" href="css/form-task.css" />
-    <link rel="stylesheet" href="css/list.css" />
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        background: #fff;
-        padding: 0;
-        margin: 0;
-      }
-    </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/card.css" />
+  <link rel="stylesheet" href="css/form-task.css" />
+  <link rel="stylesheet" href="css/list.css" />
 
-    <title>Lista de tareas</title>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img
-          class="navbar-logo-icon"
-          src="./resources/icons8-todo-list-100.png"
-          width="40"
-          height="80"
-        />
-        <h2 class="navbar-logo-text">Lista de Tareas</h2>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+
+  <title>Lista de tareas</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img class="navbar-logo-icon" src="./resources/icons8-todo-list-100.png" width="40" height="80" />
+      <h2 class="navbar-logo-text">Lista de Tareas</h2>
+    </div>
+
+    <section class="navbar-menu">
+      <div class="icon-user">
+        <div class="avatar"></div>
+        <h2>Edwin↓</h2>
       </div>
 
-      <section class="navbar-menu">
-        <div class="icon-user">
-          <div class="avatar"></div>
-          <h2>Edwin↓</h2>
-        </div>
+      <div class="icon-signout"></div>
+    </section>
+  </nav>
 
-        <div class="icon-signout"></div>
-      </section>
-    </nav>
-
-    <main>
-      <aside>
-        <div id="Done-Task" class="list-task">
-           <!-- 
-            <h2>Tarea completadas</h2>
+  <main>
+    <aside>
+      <div id="Done-Task" class="list-task">
+        <!--<h2>Tarea completadas</h2>
             <ul>
-                <li>Task 1</li>
-            </ul>
-            -->
-        </div>
-        <div id="Cancelled-Task"  class="list-task">
-           <!-- <h2>Tarea eliminadas</h2>
+                <li><b>1.</b> Task 1</li>
+                <small class="tag-description">Desarrollar mock para la agencia de viajes y publicidad</small>
+            </ul>-->
+      </div>
+      <div id="Cancelled-Task" class="list-task">
+        <!--<h2>Tarea eliminadas</h2>
             <ul>
                 <li>
                     <span>Task 1</span>
@@ -64,161 +61,197 @@
                         <button class="btn btn-warning">Editar</button>
                     </div>
                 </li>
+                <small class="tag-description">Desarrollar mock para la agencia de viajes y publicidad</small>
+
+
+                <li>
+                  <span>Task 1</span>
+                  <div class="btn-group">
+                      <button class="btn btn-warning">Editar</button>
+                  </div>
+                </li>
+                <small class="tag-description">Desarrollar mock para la agencia de viajes y publicidad</small>
             </ul>
-             -->
+          -->
+      </div>
+    </aside>
+
+    <section id="in__process">
+
+      <div class="task-container">
+        <div class="title">
+          <span>Crear Tareas</span>
         </div>
-      </aside>
 
-      <section id="in__process">
+        <div class="form-control">
+          <div class="input-control">
+            <label for="Title">Titulo</label>
+            <input id="Title" type="text">
+          </div>
+          <div class="input-control">
+            <label for="Description">Descripción</label>
+            <textarea id="Description" cols="40" rows="1.2"></textarea>
+          </div>
 
-        <div class="task-container">
-            <div class="title">
-                <span>Crear Tareas</span>
-            </div>
-
-            <div class="form-control">
-                <div class="input-control">
-                    <label for="Title">Titulo</label>
-                    <input id="Title" type="text">
-                </div>
-                <div class="input-control">
-                    <label for="Description">Descripción</label>
-                    <textarea id="Description" cols="40" rows="1.2"></textarea>
-                </div>
-
-                <!--<div class="input-control input-check">
+          <!--<div class="input-control input-check">
                     <label for="State">Terminada</label>
                     <input id="check-State" type="checkbox">
                 </div> -->
 
-                <div class="input-control">
-                    <button class="btn btn-success" onclick="SaveTask()">Guardar</button>
-                </div>
-  
-            </div>
-        </div>
+          <div class="input-control">
+            <button class="btn btn-success" onclick="SaveTask()">Guardar</button>
+          </div>
 
-        <div>
-          <h1>Tareas pendientes</h1>
-        
+        </div>
+      </div>
+
+      <div>
+        <h1>Tareas pendientes</h1>
+
         <div id="section-card">
 
-          <!--<div data-id="1" class="card">
+          <div data-id="1" class="card">
             <div class="image">
-              <img
-                src="./resources/task-inprocess.png"
-                alt=""
-              />
+              <img src="./resources/task-inprocess.png" alt="" />
               <span class="state">En proceso</span>
             </div>
-  
+
             <div class="details">
               <span class="badge">10</span>
-  
+
               <h1>Task</h1>
               <p class="information">
                 Desarrollar mock para la agencia de viajes y publicidad
               </p>
-  
+
               <div class="btn-group">
-                  <button class="btn btn-primary">Terminar</button>
-                  <button class="btn btn-warning">Editar</button>
-                  <button class="btn btn-danger">Anular</button>
+                <button class="btn btn-primary">Terminar</button>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Anular</button>
               </div>
             </div>
           </div>
 
           <div data-id="1" class="card">
             <div class="image">
-              <img
-                src="./resources/task-inprocess.png"
-                alt=""
-              />
+              <img src="./resources/task-inprocess.png" alt="" />
               <span class="state">En proceso</span>
             </div>
-  
+
             <div class="details">
               <span class="badge">10</span>
-  
+
               <h1>Task</h1>
               <p class="information">
                 Desarrollar mock para la agencia de viajes y publicidad
               </p>
-  
+
               <div class="btn-group">
-                  <button class="btn btn-primary">Terminar</button>
-                  <button class="btn btn-warning">Editar</button>
-                  <button class="btn btn-danger">Anular</button>
+                <button class="btn btn-primary">Terminar</button>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Anular</button>
               </div>
             </div>
           </div>
 
           <div data-id="1" class="card">
             <div class="image">
-              <img
-                src="./resources/task-inprocess.png"
-                alt=""
-              />
+              <img src="./resources/task-inprocess.png" alt="" />
               <span class="state">En proceso</span>
             </div>
-  
+
             <div class="details">
               <span class="badge">10</span>
-  
+
               <h1>Task</h1>
               <p class="information">
                 Desarrollar mock para la agencia de viajes y publicidad
               </p>
-  
+
               <div class="btn-group">
-                  <button class="btn btn-primary">Terminar</button>
-                  <button class="btn btn-warning">Editar</button>
-                  <button class="btn btn-danger">Anular</button>
+                <button class="btn btn-primary">Terminar</button>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Anular</button>
               </div>
             </div>
           </div>
 
           <div data-id="1" class="card">
             <div class="image">
-              <img
-                src="./resources/task-inprocess.png"
-                alt=""
-              />
+              <img src="./resources/task-inprocess.png" alt="" />
               <span class="state">En proceso</span>
             </div>
-  
+
             <div class="details">
               <span class="badge">10</span>
-  
+
               <h1>Task</h1>
               <p class="information">
                 Desarrollar mock para la agencia de viajes y publicidad
               </p>
-  
+
               <div class="btn-group">
-                  <button class="btn btn-primary">Terminar</button>
-                  <button class="btn btn-warning">Editar</button>
-                  <button class="btn btn-danger">Anular</button>
+                <button class="btn btn-primary">Terminar</button>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Anular</button>
               </div>
             </div>
-          </div>-->
-
-          
+          </div>
 
 
-
-        </div> 
+        </div>
 
       </div>
 
 
 
-        
-
-      </section>
-    </main>
 
 
-    <script src="./js/worker.js"></script>
-  </body>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="statistic">
+      <div class="square short-square square-primary">
+        <h3 id="counted-task-completed">5</h3>
+      </div>
+
+      <div class="square long-square square-primary">
+        <h3>Tareas Completadas</h3>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="statistic">
+      <div class="square short-square square-warning">
+        <h3 id="counted-task-pending">5</h3>
+      </div>
+
+      <div class="square long-square square-warning">
+        <h3>Tareas Pendientes</h3>
+      </div>
+    </div>
+
+
+
+
+    <div class="statistic">
+      <div class="square short-square square-danger">
+        <h3 id="counted-task-canceled">5</h3>
+      </div>
+
+      <div class="square long-square square-danger">
+        <h3>Tareas Canceladas</h3>
+      </div>
+    </div>
+</footer>
+
+
+  <script src="./js/worker.js"></script>
+</body>
+
 </html>
