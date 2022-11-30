@@ -5,7 +5,7 @@ aside > .list-task{
     margin-bottom: 2rem;
 }
 
-aside > .list-task h2{
+aside > .list-task h2, h1{
     color:#168AAD;
     font-size: 28px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
