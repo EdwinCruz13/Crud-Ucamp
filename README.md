@@ -1,7 +1,7 @@
 # Lista de tareas-CRUD-Ucamp
 Bienvenido al repositorio de Lista de tareas con Javascript
 <br>
-Ver sitio <a href="#">🔗 aqui</a>
+Ver sitio <a href="https://edwincruz13.github.io/Ucamp-Crud/">🔗 aqui</a>
 
 <details open="">
   <summary><h2>✨Acerca de lista de tareas</h2></summary>
