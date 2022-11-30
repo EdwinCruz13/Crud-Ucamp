@@ -38,7 +38,7 @@ Ver sitio <a href="#">🔗 aqui</a>
   <br>
 - [x] 🗎  El archivo <b>index.html</b> es el archivo en html5.
   <br><br>
-  <img src="#" />
+  <img src="https://github.com/EdwinCruz13/Ucamp-Crud/blob/main/structure/structure.png?raw=true" />
             
 </p>
 </details>
@@ -49,9 +49,8 @@ Ver sitio <a href="#">🔗 aqui</a>
   Ver el proyecto <a href="#">🔗 aqui</a>
   <br>
   <ul>
-    <li><a href="#">1 - Versión desktop.</a></li>
-    <li><a href="#">2 - Versión tablet.</a></li>
-    <li><a href="#">3 - Versión mobile.</a></li>
+    <li><a href="https://github.com/EdwinCruz13/Ucamp-Crud/blob/main/structure/Tasks-web.png?raw=true">1 - Versión desktop.</a></li>
+    <li><a href="https://github.com/EdwinCruz13/Ucamp-Crud/blob/main/structure/Tasks-mobil.png?raw=true">2 - Versión mobile.</a></li>
   </ul>        
 </p>
 </details>
