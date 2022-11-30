@@ -46,7 +46,7 @@ Ver sitio <a href="#">🔗 aqui</a>
 <details open="">
   <summary><h2>💡 Resultado</h2></summary>
 <p dir="auto"> 
-  Ver el proyecto <a href="#">🔗 aqui</a>
+  Ver el proyecto <a href="https://edwincruz13.github.io/Ucamp-Crud/">🔗 aqui</a>
   <br>
   <ul>
     <li><a href="https://github.com/EdwinCruz13/Ucamp-Crud/blob/main/structure/Tasks-web.png?raw=true">1 - Versión desktop.</a></li>
@@ -63,6 +63,7 @@ Ver sitio <a href="#">🔗 aqui</a>
   </br>
   <ul>
     <li><a href="https://github.com/EdwinCruz13/LandingPage/">Landing Page</a></li>
+    <li><a href="https://edwincruz13.github.io/Ucamp-Crud/">CRUD - localstoraged y JS</a></li>
     <li><a href="https://github.com/EdwinCruz13/Ucamp-Crud/">Lista de tareas usando Javascript</a></li>
     <li><a href="https://github.com/EdwinCruz13/MERN">MERN</a></li>
     <li><a href="#">Mongo</a></li>
